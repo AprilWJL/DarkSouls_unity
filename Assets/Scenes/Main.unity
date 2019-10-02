@@ -435,10 +435,15 @@ MonoBehaviour:
   keyDown: s
   keyLeft: a
   keyRight: d
+  keyA: left shift
+  keyB: 
+  keyC: 
+  keyD: 
   Dup: 0
   Dright: 0
   Dmag: 0
   Dvec: {x: 0, y: 0, z: 0}
+  run: 0
   inputEnable: 1
 --- !u!114 &1451211729
 MonoBehaviour:
@@ -454,6 +459,7 @@ MonoBehaviour:
   model: {fileID: 344938164}
   pi: {fileID: 0}
   walkSpeed: 1.5
+  runMultiplier: 2.7
   anim: {fileID: 0}
 --- !u!136 &1451211730
 CapsuleCollider:
