@@ -236,7 +236,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ActorController.cs" />
+    <Compile Include="Assets\FSMClearSignals.cs" />
+    <Compile Include="Assets\FSMOnEnter.cs" />
+    <Compile Include="Assets\FSMOnExit.cs" />
     <Compile Include="Assets\PlayerInput.cs" />
+    <Compile Include="Assets\TesterFSMOnEnter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

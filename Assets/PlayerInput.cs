@@ -21,7 +21,12 @@ public class PlayerInput : MonoBehaviour {
     public float Dmag;      //速度
     public Vector3 Dvec;    //旋转
 
+    //pressing signal
     public bool run;        //跑步信号
+    //trigger once signal
+    public bool jump;       //跳跃信号
+    public bool lastJump;
+    //double trigger
 
     [Header("===== Others =====")]
     public bool inputEnable = true;     //输入开关
@@ -60,6 +65,19 @@ public class PlayerInput : MonoBehaviour {
         Dvec = Dright2 * transform.right + Dup2 * transform.forward;
 
         run = Input.GetKey(keyA);
+
+        bool newJump = Input.GetKey(keyB);
+        //jump = newJump;
+        if (newJump != lastJump && newJump == true)
+        {
+            jump = true;
+            //print("jump");
+        }
+        else
+        {
+            jump = false;
+        }
+        lastJump = newJump;
     }
 
     /// <summary>
