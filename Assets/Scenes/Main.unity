@@ -252,6 +252,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &880349988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 880349989}
+  - component: {fileID: 880349990}
+  m_Layer: 0
+  m_Name: sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880349989
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880349988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1451211732}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &880349990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880349988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c026fe2dcae4e224980cb8ec6bfe550d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capcol: {fileID: 1451211730}
+  offset: 0.1
 --- !u!1 &1396360036
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +305,7 @@ GameObject:
   - component: {fileID: 1396360039}
   - component: {fileID: 1396360038}
   - component: {fileID: 1396360037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,8 +372,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1396360036}
   m_LocalRotation: {x: -0.17000937, y: -0, z: -0, w: 0.98544246}
-  m_LocalPosition: {x: 2.22, y: 0, z: 2.4}
-  m_LocalScale: {x: 3.862453, y: 1, z: 8.231885}
+  m_LocalPosition: {x: 2.22, y: 0, z: -5.05}
+  m_LocalScale: {x: 3.862453, y: 1, z: 20.789337}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -410,9 +452,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1451211732}
   - component: {fileID: 1451211730}
+  - component: {fileID: 1451211731}
   - component: {fileID: 1451211728}
   - component: {fileID: 1451211729}
-  - component: {fileID: 1451211731}
   m_Layer: 0
   m_Name: PlayerHandle
   m_TagString: Untagged
@@ -462,7 +504,7 @@ MonoBehaviour:
   pi: {fileID: 0}
   walkSpeed: 1.5
   runMultiplier: 2.7
-  jumpVelocity: 2
+  jumpVelocity: 3
   anim: {fileID: 0}
   lockPlanar: 0
 --- !u!136 &1451211730
@@ -500,10 +542,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451211727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -7.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 362005343}
+  - {fileID: 880349989}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -518,7 +561,7 @@ GameObject:
   - component: {fileID: 1966242453}
   - component: {fileID: 1966242452}
   - component: {fileID: 1966242451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

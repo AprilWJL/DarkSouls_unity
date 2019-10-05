@@ -53,6 +53,9 @@ public class ActorController : MonoBehaviour {
         thrustVec = Vector3.zero;
     }
 
+    /// <summary>
+    /// Message接收
+    /// </summary>
     public void OnJumpEnter()
     {
         pi.inputEnable = false;     //跳跃时不能移动  
@@ -61,10 +64,34 @@ public class ActorController : MonoBehaviour {
         //print("onjumpenter");
     }
 
-    public void OnJumpExit()
+    //public void OnJumpExit()
+    //{
+    //    pi.inputEnable = true;
+    //    lockPlanar = false;
+    //    //print("onjumpexit");
+    //}
+
+    public void IsGround()
+    {        
+        anim.SetBool("isGround", true);
+    }
+
+    public void IsNotGround()
+    {
+        anim.SetBool("isGround", false);
+    }
+
+    public void OnGroundEnter()
     {
         pi.inputEnable = true;
         lockPlanar = false;
-        //print("onjumpexit");
     }
+
+    public void OnFallEnter()
+    {
+        pi.inputEnable = true;
+        lockPlanar = false;
+    }
+
+
 }
