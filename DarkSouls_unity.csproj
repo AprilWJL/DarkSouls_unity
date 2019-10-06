@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ActorController.cs" />
+    <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\FSMClearSignals.cs" />
     <Compile Include="Assets\FSMOnEnter.cs" />
     <Compile Include="Assets\FSMOnExit.cs" />

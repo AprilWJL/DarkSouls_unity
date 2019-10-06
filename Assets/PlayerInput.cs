@@ -15,11 +15,19 @@ public class PlayerInput : MonoBehaviour {
     public string keyC;
     public string keyD;
 
+    public string keyJUp;       //右摇杆（上下左右）控制摄像机
+    public string keyJDown;
+    public string keyJRight;
+    public string keyJLeft;
+
     [Header("===== Output signals =====")]
     public float Dup;      //上下信号
     public float Dright;   //左右信号
     public float Dmag;      //速度
     public Vector3 Dvec;    //旋转
+
+    public float Jup;     //右摇杆
+    public float Jright;
 
     //pressing signal
     public bool run;        //跑步信号
@@ -44,6 +52,10 @@ public class PlayerInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        Jup = (Input.GetKey(keyJUp) ? 1.0f : 0f) - (Input.GetKey(keyJDown) ? 1.0f : 0f);
+        Jright = (Input.GetKey(keyJRight) ? 1.0f : 0f) - (Input.GetKey(keyJLeft) ? 1.0f : 0f);
+
         targetDup = (Input.GetKey(keyUp) ? 1.0f : 0) - (Input.GetKey(keyDown) ? 1.0f : 0);
         targetDright = (Input.GetKey(keyRight) ? 1.0f : 0) - (Input.GetKey(keyLeft) ? 1.0f : 0);
 
