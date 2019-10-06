@@ -91,7 +91,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 342}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 52
+  controlID: 57
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 88
+  controlID: 71
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -177,7 +177,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 886
     y: 0
-    width: 309
+    width: 303
     height: 731
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1195
+    x: 1189
     y: 0
-    width: 341
+    width: 347
     height: 731
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -257,8 +257,8 @@ MonoBehaviour:
     y: 330
     width: 680
     height: 401
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -296,14 +296,14 @@ MonoBehaviour:
     - {fileID: 1107120442721823780, guid: 2541812da0bdad94697e31769eb8e70f, type: 2}
     - {fileID: 1102091889558879106, guid: 2541812da0bdad94697e31769eb8e70f, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.94424516
+    - e00: 0.8404185
       e01: 0
       e02: 0
-      e03: -184.57596
+      e03: -145.95575
       e10: 0
-      e11: 0.94424516
+      e11: 0.8404185
       e12: 0
-      e13: 4.306259
+      e13: -25.21254
       e20: 0
       e21: 0
       e22: 1
@@ -363,9 +363,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1197
+    x: 1220
     y: 92
-    width: 339
+    width: 316
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &14
@@ -476,9 +476,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1197
+    x: 1191
     y: 92
-    width: 339
+    width: 345
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
@@ -512,7 +512,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 888
     y: 92
-    width: 305
+    width: 299
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -527,18 +527,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Models/YBot/Extra
+    - Assets/Models/YBot/SwordAndShield
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Models/YBot/Extra
+  - Assets/Models/YBot/SwordAndShield
   m_LastFoldersGridSize: 16
   m_LastProjectPath: F:\Unity\U3DProject\DarkSouls_unity
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c270000
-    m_LastClickedID: 10140
+    m_SelectedIDs: 08280000
+    m_LastClickedID: 10248
     m_ExpandedIDs: 000000009027000028290000e029000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 822c0000002c0000ca2800009c290000cc28000022290000dc280000
+    m_ExpandedInstanceIDs: 822c0000002c0000ca2800009c290000cc28000022290000dc28000042280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -619,7 +619,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 223}
     m_GridSize: 16
   m_DirectoriesAreaWidth: 122
 --- !u!114 &18

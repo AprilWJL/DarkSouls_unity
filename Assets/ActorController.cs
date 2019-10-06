@@ -8,8 +8,8 @@ public class ActorController : MonoBehaviour {
     public PlayerInput pi;
     public float walkSpeed = 2.4f;
     public float runMultiplier = 2.7f;
-    public float jumpVelocity = 2.0f;   //向上跳跃速度
-    public float rollVelocity = 1.0f;   //向上翻滚速度
+    public float jumpVelocity = 2.0f;   //向上跳跃冲量
+    public float rollVelocity = 1.0f;   //向上翻滚冲量
 
     [SerializeField]
     private Animator anim;
@@ -98,5 +98,17 @@ public class ActorController : MonoBehaviour {
         thrustVec = new Vector3(0, rollVelocity, 0);       
         pi.inputEnable = false;     
         lockPlanar = true;          //锁死平面移动
+    }
+
+    public void OnJabEnter()
+    {
+        pi.inputEnable = false;
+        lockPlanar = true;          //锁死平面移动
+    }
+
+    public void OnJabUpdate()
+    {
+        thrustVec = model.transform.forward * anim.GetFloat("jabVelocity");
+
     }
 }
