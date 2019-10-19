@@ -508,7 +508,7 @@ MonoBehaviour:
   keyRight: d
   keyA: left shift
   keyB: j
-  keyC: 
+  keyC: k
   keyD: 
   keyJUp: up
   keyJDown: down
@@ -523,6 +523,8 @@ MonoBehaviour:
   run: 0
   jump: 0
   lastJump: 0
+  attack: 0
+  lastAttack: 0
   inputEnable: 1
 --- !u!114 &1451211729
 MonoBehaviour:
@@ -541,7 +543,8 @@ MonoBehaviour:
   runMultiplier: 2.7
   jumpVelocity: 4
   rollVelocity: 2
-  anim: {fileID: 0}
+  frictionOne: {fileID: 13400000, guid: b1182650872ab124ca607d89bb1f1fbc, type: 2}
+  frictionZero: {fileID: 13400000, guid: de18200b06ae8994a9bba83688082811, type: 2}
   lockPlanar: 0
 --- !u!136 &1451211730
 CapsuleCollider:

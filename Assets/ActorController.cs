@@ -11,19 +11,25 @@ public class ActorController : MonoBehaviour {
     public float jumpVelocity = 2.0f;   //向上跳跃冲量
     public float rollVelocity = 1.0f;   //向上翻滚冲量
 
-    [SerializeField]
+    [Space(10)]
+    [Header("----- Friction Settting -----")]
+    public PhysicMaterial frictionOne;
+    public PhysicMaterial frictionZero;
+
     private Animator anim;
     private Rigidbody rigid;
     private Vector3 planarVec;      //平面
     private Vector3 thrustVec;      //冲量
-
+    private bool canAttack;
     public bool lockPlanar = false; //锁死平面移动速度
+    private CapsuleCollider col;
 
 	// Use this for initialization
 	void Awake () {
         pi = GetComponent<PlayerInput>();
         anim = model.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
 	}
 	
 	// Update is called once per frame
@@ -39,6 +45,12 @@ public class ActorController : MonoBehaviour {
         if (pi.jump)
         {
             anim.SetTrigger("jump");
+            canAttack = false;
+        }
+
+        if (pi.attack && CheckState("ground") && canAttack)
+        {
+            anim.SetTrigger("attack");
         }
 
         if (pi.Dmag > 0.1f)
@@ -49,8 +61,9 @@ public class ActorController : MonoBehaviour {
         if (lockPlanar == false)
         {
             planarVec = pi.Dmag * model.transform.forward * walkSpeed * (pi.run ? runMultiplier : 1.0f);
-
         }
+
+        //print(CheckState("idle", "attack"));
 	}
 
     private void FixedUpdate()
@@ -58,6 +71,19 @@ public class ActorController : MonoBehaviour {
         //rigid.position += planarVec * Time.fixedDeltaTime;
         rigid.velocity = new Vector3(planarVec.x, rigid.velocity.y, planarVec.z) + thrustVec;   //用刚体来进行移动
         thrustVec = Vector3.zero;
+    }
+    
+    /// <summary>
+    /// 确认当前层是否为Base Layer
+    /// </summary>
+    /// <param name="stateName"></param>
+    /// <param name="layerName"></param>
+    /// <returns></returns>
+    private bool CheckState(string stateName, string layerName = "Base Layer")
+    {
+        int layerIndex = anim.GetLayerIndex(layerName);
+        bool result = anim.GetCurrentAnimatorStateInfo(layerIndex).IsName(stateName);
+        return result;
     }
 
     /// <summary>
@@ -85,6 +111,13 @@ public class ActorController : MonoBehaviour {
     {
         pi.inputEnable = true;
         lockPlanar = false;
+        canAttack = true;
+        col.material = frictionOne;     //动态抽换Physic Materia来解决黏在墙上的问题
+    }
+
+    public void OnGroundExit()
+    {
+        col.material = frictionZero;    //动态抽换Physic Materia来解决黏在墙上的问题
     }
 
     public void OnFallEnter()
@@ -110,5 +143,24 @@ public class ActorController : MonoBehaviour {
     {
         thrustVec = model.transform.forward * anim.GetFloat("jabVelocity");
 
+    }
+
+    public void OnAttack1hAEnter()
+    {
+        pi.inputEnable = false;
+        //lockPlanar = true;          //锁死平面移动
+        anim.SetLayerWeight(anim.GetLayerIndex("attack"), 1.0f);
+    }
+
+    public void OnAttack1hAUpdate()
+    {
+        thrustVec = model.transform.forward * anim.GetFloat("attack1hAVelocity");
+    }
+
+    public void OnAttackIdle()
+    {
+        pi.inputEnable = true;
+        //lockPlanar = false;      
+        anim.SetLayerWeight(anim.GetLayerIndex("attack"), 0);
     }
 }

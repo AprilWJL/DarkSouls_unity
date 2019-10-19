@@ -34,6 +34,8 @@ public class PlayerInput : MonoBehaviour {
     //trigger once signal
     public bool jump;       //跳跃信号
     public bool lastJump;
+    public bool attack;       //跳跃信号
+    public bool lastAttack;
     //double trigger
 
     [Header("===== Others =====")]
@@ -90,6 +92,19 @@ public class PlayerInput : MonoBehaviour {
             jump = false;
         }
         lastJump = newJump;
+
+        bool newAttack = Input.GetKey(keyC);
+        //jump = newJump;
+        if (newAttack != lastAttack && newAttack == true)
+        {
+            attack = true;
+            //print("jump");
+        }
+        else
+        {
+            attack = false;
+        }
+        lastAttack = newAttack;
     }
 
     /// <summary>
