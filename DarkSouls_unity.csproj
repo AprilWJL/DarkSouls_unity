@@ -243,7 +243,9 @@
     <Compile Include="Assets\FSMOnUpdate.cs" />
     <Compile Include="Assets\OnGroundSensor.cs" />
     <Compile Include="Assets\PlayerInput.cs" />
+    <Compile Include="Assets\RootMotionControl.cs" />
     <Compile Include="Assets\TesterFSMOnEnter.cs" />
+    <Compile Include="Assets\TriggerControl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

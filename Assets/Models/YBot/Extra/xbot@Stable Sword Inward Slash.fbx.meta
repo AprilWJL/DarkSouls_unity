@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 4831e51d07d01434a9767c5e91b2a464
-timeCreated: 1519731327
-licenseType: Free
+guid: 2ef83aefe29dabb45afa3494ca0d64a7
+timeCreated: 1572163329
+licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -141,14 +141,14 @@ ModelImporter:
     400130: mixamorig:Spine1
     400132: mixamorig:Spine2
     400134: //RootNode
-    7400000: slash1
+    7400000: Stable Sword Inward Slash
     9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -156,7 +156,14 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
+      : position error = 17.374958 mm\n\t'mixamorig:LeftLeg' : position error = 37.362202
+      mm\n\t'mixamorig:LeftFoot' : position error = 24.781258 mm\n\t'mixamorig:LeftToeBase'
+      : position error = 25.515951 mm\n\t'mixamorig:RightUpLeg' : position error =
+      17.374962 mm\n\t'mixamorig:RightLeg' : position error = 37.360069 mm\n\t'mixamorig:RightFoot'
+      : position error = 24.777168 mm\n\t'mixamorig:RightToeBase' : position error
+      = 25.515947 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -171,10 +178,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: slash1
+      name: Stable Sword Inward Slash
       takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 45
+      firstFrame: 21
+      lastFrame: 66
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -187,33 +194,14 @@ ModelImporter:
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves:
-      - name: attack1hAVelocity
-        curve:
-          serializedVersion: 2
-          curve:
-          - serializedVersion: 2
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          - serializedVersion: 2
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-          preInfinity: 3
-          postInfinity: 3
-          rotationOrder: 0
+      curves: []
       events:
-      - time: 0.624874
+      - time: 0.60972935
         functionName: ResetTrigger
         data: attack
         objectReferenceParameter: {instanceID: 0}
@@ -241,7 +229,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

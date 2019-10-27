@@ -23,6 +23,8 @@ public class ActorController : MonoBehaviour {
     private bool canAttack;
     public bool lockPlanar = false; //锁死平面移动速度
     private CapsuleCollider col;
+    private float lerpTarget;
+    private Vector3 deltaPos;
 
 	// Use this for initialization
 	void Awake () {
@@ -69,8 +71,10 @@ public class ActorController : MonoBehaviour {
     private void FixedUpdate()
     {
         //rigid.position += planarVec * Time.fixedDeltaTime;
+        rigid.position += deltaPos;
         rigid.velocity = new Vector3(planarVec.x, rigid.velocity.y, planarVec.z) + thrustVec;   //用刚体来进行移动
         thrustVec = Vector3.zero;
+        deltaPos = Vector3.zero;
     }
     
     /// <summary>
@@ -149,18 +153,42 @@ public class ActorController : MonoBehaviour {
     {
         pi.inputEnable = false;
         //lockPlanar = true;          //锁死平面移动
-        anim.SetLayerWeight(anim.GetLayerIndex("attack"), 1.0f);
+        lerpTarget = 1.0f;
     }
 
     public void OnAttack1hAUpdate()
     {
         thrustVec = model.transform.forward * anim.GetFloat("attack1hAVelocity");
+        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.4f);
+        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
     }
 
-    public void OnAttackIdle()
+    public void OnAttackIdleEnter()
     {
         pi.inputEnable = true;
         //lockPlanar = false;      
-        anim.SetLayerWeight(anim.GetLayerIndex("attack"), 0);
+        //anim.SetLayerWeight(anim.GetLayerIndex("attack"), 0);
+        lerpTarget = 0f;
+    }
+
+    public void OnAttackIdleUpdate()
+    {
+        float currentWeight = anim.GetLayerWeight(anim.GetLayerIndex("attack"));
+        currentWeight = Mathf.Lerp(currentWeight, lerpTarget, 0.4f);
+        anim.SetLayerWeight(anim.GetLayerIndex("attack"), currentWeight);
+    }
+
+    /// <summary>
+    /// 接收动画位移增加给Ybot
+    /// </summary>
+    /// <param name="_deltaPos"></param>
+    public void OnUpdateRM(object _deltaPos)
+    {
+        if (CheckState("attack1hC", "attack"))
+        {
+            deltaPos += (Vector3)_deltaPos;
+
+        }
     }
 }
