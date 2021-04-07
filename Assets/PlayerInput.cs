@@ -5,20 +5,18 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour {
 
     [Header("===== Keys settings  =====")]
-    public string keyUp = "w";
-    public string keyDown = "s";
-    public string keyLeft = "a";
-    public string keyRight = "d";
+    public KeyCode keyUp = KeyCode.W;
+    public KeyCode keyDown = KeyCode.S;
+    public KeyCode keyLeft = KeyCode.A;
+    public KeyCode keyRight = KeyCode.D;
 
-    public string keyA = "left shift";
-    public string keyB;
-    public string keyC;
-    public string keyD;
+    public KeyCode keyA = KeyCode.LeftShift;
+    public KeyCode keyJump = KeyCode.Space;
 
-    public string keyJUp;       //右摇杆（上下左右）控制摄像机
-    public string keyJDown;
-    public string keyJRight;
-    public string keyJLeft;
+    public KeyCode keyJUp = KeyCode.UpArrow;       //右摇杆（上下左右）控制摄像机
+    public KeyCode keyJDown = KeyCode.DownArrow;
+    public KeyCode keyJRight = KeyCode.RightArrow;
+    public KeyCode keyJLeft = KeyCode.LeftArrow;
 
     [Header("===== Output signals =====")]
     public float Dup;      //上下信号
@@ -34,7 +32,7 @@ public class PlayerInput : MonoBehaviour {
     //trigger once signal
     public bool jump;       //跳跃信号
     public bool lastJump;
-    public bool attack;       //跳跃信号
+    public bool attack;       //攻击信号
     public bool lastAttack;
     //double trigger
 
@@ -80,12 +78,11 @@ public class PlayerInput : MonoBehaviour {
 
         run = Input.GetKey(keyA);
 
-        bool newJump = Input.GetKey(keyB);
+        bool newJump = Input.GetKeyDown(keyJump);
         //jump = newJump;
         if (newJump != lastJump && newJump == true)
         {
             jump = true;
-            //print("jump");
         }
         else
         {
@@ -93,12 +90,11 @@ public class PlayerInput : MonoBehaviour {
         }
         lastJump = newJump;
 
-        bool newAttack = Input.GetKey(keyC);
+        bool newAttack = Input.GetMouseButtonDown(0);
         //jump = newJump;
         if (newAttack != lastAttack && newAttack == true)
         {
             attack = true;
-            //print("jump");
         }
         else
         {
